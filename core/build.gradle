@@ -27,5 +27,7 @@ dependencies {
 
     implementation "javax.inject:javax.inject:1"
 
+    testImplementation project(":testing")
+
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
 }
