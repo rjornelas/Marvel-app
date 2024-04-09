@@ -17,7 +17,7 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.example.marvelapp"
+        applicationId "com.rjornelas.marvelapp"
         minSdkVersion 23
         targetSdkVersion 33
         versionCode 1
