@@ -4,7 +4,6 @@ import androidx.paging.PagingData
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.whenever
 import com.rjornelas.core.usecase.GetCharactersUseCase
-import com.rjornelas.marvelapp.presentation.characters.CharactersViewModel
 import com.rjornelas.testing.MainCoroutineRule
 import com.rjornelas.testing.model.CharacterFactory
 import junit.framework.TestCase.assertEquals

@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.rjornelas.core.domain.model.Character
 import com.rjornelas.marvelapp.R
 import com.rjornelas.marvelapp.databinding.ItemCharacterBinding
-import com.rjornelas.core.domain.model.Character
 
 class CharactersViewHold(itemCharacterBinding: ItemCharacterBinding) :
     RecyclerView.ViewHolder(itemCharacterBinding.root) {

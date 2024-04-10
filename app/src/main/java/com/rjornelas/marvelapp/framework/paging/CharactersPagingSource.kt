@@ -2,10 +2,10 @@ package com.rjornelas.marvelapp.framework.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.rjornelas.marvelapp.framework.network.response.DataWrapperResponse
-import com.rjornelas.marvelapp.framework.network.response.toCharacterModel
 import com.rjornelas.core.data.repository.CharactersRemoteDataSource
 import com.rjornelas.core.domain.model.Character
+import com.rjornelas.marvelapp.framework.network.response.DataWrapperResponse
+import com.rjornelas.marvelapp.framework.network.response.toCharacterModel
 
 class CharactersPagingSource(
     private val remoteDataSource: CharactersRemoteDataSource<DataWrapperResponse>,
