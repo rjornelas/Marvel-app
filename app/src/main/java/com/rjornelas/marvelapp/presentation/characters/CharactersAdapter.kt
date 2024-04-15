@@ -5,12 +5,12 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.rjornelas.core.domain.model.Character
 
-class CharactersAdapter : PagingDataAdapter<Character, CharactersViewHold>(diffCallback) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersViewHold {
-        return CharactersViewHold.create(parent)
+class CharactersAdapter : PagingDataAdapter<Character, CharactersViewHolder>(diffCallback) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersViewHolder {
+        return CharactersViewHolder.create(parent)
     }
 
-    override fun onBindViewHolder(holder: CharactersViewHold, position: Int) {
+    override fun onBindViewHolder(holder: CharactersViewHolder, position: Int) {
         getItem(position)?.let {
             holder.bind(it)
         }

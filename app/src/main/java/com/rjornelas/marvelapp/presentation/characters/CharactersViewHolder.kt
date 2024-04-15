@@ -8,7 +8,7 @@ import com.rjornelas.core.domain.model.Character
 import com.rjornelas.marvelapp.R
 import com.rjornelas.marvelapp.databinding.ItemCharacterBinding
 
-class CharactersViewHold(itemCharacterBinding: ItemCharacterBinding) :
+class CharactersViewHolder(itemCharacterBinding: ItemCharacterBinding) :
     RecyclerView.ViewHolder(itemCharacterBinding.root) {
 
     private val textName = itemCharacterBinding.txtName
@@ -23,10 +23,10 @@ class CharactersViewHold(itemCharacterBinding: ItemCharacterBinding) :
     }
 
     companion object{
-        fun create(parent: ViewGroup) : CharactersViewHold {
+        fun create(parent: ViewGroup) : CharactersViewHolder {
             val inflater = LayoutInflater.from(parent.context)
             val itemBinding = ItemCharacterBinding.inflate(inflater, parent, false)
-            return CharactersViewHold(itemBinding)
+            return CharactersViewHolder(itemBinding)
         }
     }
 }
