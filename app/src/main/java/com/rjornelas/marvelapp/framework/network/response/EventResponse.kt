@@ -2,20 +2,19 @@ package com.rjornelas.marvelapp.framework.network.response
 
 import com.google.gson.annotations.SerializedName
 import com.rjornelas.core.domain.model.Character
+import com.rjornelas.core.domain.model.Comic
+import com.rjornelas.core.domain.model.Event
 
-data class CharacterResponse(
+data class EventResponse(
     @SerializedName("id")
     val id: Int,
-    @SerializedName("name")
-    val name: String,
     @SerializedName("thumbnail")
     val thumbnail: ThumbnailResponse
 )
 
-fun CharacterResponse.toCharacterModel(): Character {
-    return Character(
+fun EventResponse.toEventModel(): Event {
+    return Event(
         id = this.id,
-        name = this.name,
         imageUrl = this.thumbnail.getHttpsUrl()
     )
 }

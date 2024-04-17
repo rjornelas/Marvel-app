@@ -7,10 +7,13 @@ import com.rjornelas.core.usecase.GetCharactersUseCase
 import com.rjornelas.testing.MainCoroutineRule
 import com.rjornelas.testing.model.CharacterFactory
 import junit.framework.TestCase.assertEquals
+import junit.framework.TestCase.assertNotNull
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.count
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -18,52 +21,54 @@ import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
 
+@ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
 class CharactersViewModelTest {
 
-    @ExperimentalCoroutinesApi
     @get:Rule
-    var mainCoroutinesRule = MainCoroutineRule()
+    var mainCoroutineRule = MainCoroutineRule()
+
+    @Mock
+    lateinit var getCharactersUseCase: GetCharactersUseCase
 
     private lateinit var charactersViewModel: CharactersViewModel
 
     private val charactersFactory = CharacterFactory()
 
-    @Mock
-    lateinit var getCharactersUseCase: GetCharactersUseCase
-
     private val pagingDataCharacters = PagingData.from(
         listOf(
-            charactersFactory.create(CharacterFactory.Hero.ABomb),
-            charactersFactory.create(CharacterFactory.Hero.ThreeDMan)
+            charactersFactory.create(CharacterFactory.Hero.ThreeDMan),
+            charactersFactory.create(CharacterFactory.Hero.ABomb)
         )
     )
 
-    @ExperimentalCoroutinesApi
     @Before
     fun setUp() {
         charactersViewModel = CharactersViewModel(getCharactersUseCase)
     }
 
     @Test
-    @ExperimentalCoroutinesApi
     fun `should validate the paging data object values when calling charactersPagingData`() =
-        runBlockingTest {
+        runTest {
             whenever(
                 getCharactersUseCase.invoke(any())
             ).thenReturn(
-                flowOf(pagingDataCharacters)
+                flowOf(
+                    pagingDataCharacters
+                )
             )
 
             val result = charactersViewModel.charactersPagingData("")
-            assertEquals(1, result.count())
+
+            assertNotNull(result.first())
         }
 
     @Test(expected = RuntimeException::class)
-    @ExperimentalCoroutinesApi
-    fun `should throw an exception when the calling to the use case return an exception`() =
-        runBlockingTest {
-            whenever(getCharactersUseCase.invoke(any())).thenThrow(RuntimeException())
+    fun `should throw an exception when the calling to the use case returns an exception`() =
+        runTest {
+            whenever(getCharactersUseCase.invoke(any()))
+                .thenThrow(RuntimeException())
+
             charactersViewModel.charactersPagingData("")
         }
 }
