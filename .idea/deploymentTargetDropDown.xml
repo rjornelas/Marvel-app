@@ -14,9 +14,6 @@
       <entry key="shouldShowCharacters_whenViewIsCreated()">
         <State />
       </entry>
-      <entry key="shouldShowErrorView_whenReceivesAnErrorFromApi()">
-        <State />
-      </entry>
     </value>
   </component>
 </project>
