@@ -36,4 +36,6 @@
     <string name="error_loading_data">Error when trying to load data</string>
     <string name="details_events_category">Events</string>
     <string name="common_no_results_found">No results found</string>
+    <string name="error_add_favorite">Error when trying to add favorite</string>
+    <string name="error_remove_favorite">Error when trying to remove favorite</string>
 </resources>

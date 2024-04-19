@@ -6,7 +6,7 @@ import com.rjornelas.core.domain.model.Character
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class FavoritesRepositoryImpl @Inject constructor(
+class FavoritesRepositoryImplementation @Inject constructor(
     private val favoritesLocalDataSource: FavoritesLocalDataSource,
 ) : FavoritesRepository {
 

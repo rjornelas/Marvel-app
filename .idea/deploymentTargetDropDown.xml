@@ -2,16 +2,7 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="CharactersFragmentTest">
-        <State />
-      </entry>
       <entry key="app">
-        <State />
-      </entry>
-      <entry key="shouldLoadMoreCharacters_whenNewPageIsRequested()">
-        <State />
-      </entry>
-      <entry key="shouldShowCharacters_whenViewIsCreated()">
         <State />
       </entry>
     </value>
