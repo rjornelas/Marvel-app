@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.rjornelas.marvelapp.R
 import com.rjornelas.marvelapp.databinding.ItemChildDetailBinding
 import com.rjornelas.marvelapp.framework.imageloader.ImageLoader
 
 class DetailChildAdapter(
-    private val detailChildList: List<DetailChildViewEntity>,
+    private val detailChildList: List<DetailChildVE>,
     private val imageLoader: ImageLoader
 ) : RecyclerView.Adapter<DetailChildAdapter.DetailChildViewHolder>() {
 
@@ -30,7 +29,7 @@ class DetailChildAdapter(
 
         private val imageCategory: ImageView = itemBinding.imageItemCategory
 
-        fun bind(detailChildVE: DetailChildViewEntity) {
+        fun bind(detailChildVE: DetailChildVE) {
             imageLoader.load(imageCategory, detailChildVE.imageUrl)
         }
 

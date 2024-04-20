@@ -1,7 +1,7 @@
 package com.rjornelas.marvelapp.framework.network.response
 
 import com.google.gson.annotations.SerializedName
-import com.rjornelas.core.domain.model.Character
+import com.rjornelas.core.domain.domain.model.Character
 
 data class CharacterResponse(
     @SerializedName("id")

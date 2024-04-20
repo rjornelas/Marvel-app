@@ -1,6 +1,6 @@
 package com.rjornelas.testing
 
-import com.rjornelas.core.usecase.base.CoroutinesDispatchers
+import com.rjornelas.core.domain.usecase.base.CoroutinesDispatchers
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

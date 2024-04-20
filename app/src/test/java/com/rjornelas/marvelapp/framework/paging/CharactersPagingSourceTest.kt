@@ -3,13 +3,14 @@ package com.rjornelas.marvelapp.framework.paging
 import androidx.paging.PagingSource
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.whenever
-import com.rjornelas.core.data.repository.CharactersRemoteDataSource
-import com.rjornelas.marvelapp.CharacterPagingFactory
+import com.rjornelas.core.domain.data.repository.CharactersRemoteDataSource
+import com.rjornelas.core.domain.domain.model.Character
+import com.rjornelas.marvelapp.factory.response.CharacterPagingFactory
 import com.rjornelas.testing.MainCoroutineRule
 import com.rjornelas.testing.model.CharacterFactory
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -27,7 +28,7 @@ class CharactersPagingSourceTest {
     @Mock
     lateinit var remoteDataSource: CharactersRemoteDataSource
 
-    private val characterPagingFactory = CharacterPagingFactory()
+    private val dataWrapperResponseFactory = CharacterPagingFactory()
 
     private val characterFactory = CharacterFactory()
 
@@ -42,7 +43,7 @@ class CharactersPagingSourceTest {
     fun `should return a success load result when load is called`() = runTest {
         // Arrange
         whenever(remoteDataSource.fetchCharacters(any()))
-            .thenReturn(characterPagingFactory.create())
+            .thenReturn(dataWrapperResponseFactory.create())
 
         // Act
         val result = charactersPagingSource.load(

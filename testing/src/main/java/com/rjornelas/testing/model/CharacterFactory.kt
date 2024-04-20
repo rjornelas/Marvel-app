@@ -1,6 +1,6 @@
 package com.rjornelas.testing.model
 
-import com.rjornelas.core.domain.model.Character
+import com.rjornelas.core.domain.domain.model.Character
 
 class CharacterFactory {
 
@@ -10,6 +10,7 @@ class CharacterFactory {
             "3-D Man",
             "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"
         )
+
         Hero.ABomb -> Character(
             1017100,
             "A-Bomb (HAS)",

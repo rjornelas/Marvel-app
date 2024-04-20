@@ -8,9 +8,9 @@ import androidx.lifecycle.LiveDataScope
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.switchMap
-import com.rjornelas.core.usecase.AddFavoriteUseCase
-import com.rjornelas.core.usecase.CheckFavoriteUseCase
-import com.rjornelas.core.usecase.RemoveFavoriteUseCase
+import com.rjornelas.core.domain.usecase.AddFavoriteUseCase
+import com.rjornelas.core.domain.usecase.CheckFavoriteUseCase
+import com.rjornelas.core.domain.usecase.RemoveFavoriteUseCase
 import com.rjornelas.marvelapp.R
 import com.rjornelas.marvelapp.presentation.extensions.watchStatus
 import kotlin.coroutines.CoroutineContext
@@ -42,6 +42,7 @@ class FavoriteUiActionStateLiveData(
                         error = {}
                     )
                 }
+
                 is Action.AddFavorite -> {
                     it.detailViewArg.run {
                         addFavoriteUseCase.invoke(
@@ -60,6 +61,7 @@ class FavoriteUiActionStateLiveData(
                         )
                     }
                 }
+
                 is Action.RemoveFavorite -> {
                     it.detailViewArg.run {
                         removeFavoriteUseCase.invoke(

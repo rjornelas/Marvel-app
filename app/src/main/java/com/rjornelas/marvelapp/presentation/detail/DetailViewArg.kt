@@ -1,7 +1,7 @@
 package com.rjornelas.marvelapp.presentation.detail
 
 import android.os.Parcelable
-import com.google.errorprone.annotations.Keep
+import androidx.annotation.Keep
 import kotlinx.parcelize.Parcelize
 
 @Keep

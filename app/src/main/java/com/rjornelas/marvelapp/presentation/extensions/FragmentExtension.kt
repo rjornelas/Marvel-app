@@ -1,6 +1,5 @@
 package com.rjornelas.marvelapp.presentation.extensions
 
-
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment

@@ -2,13 +2,13 @@ package com.rjornelas.marvelapp.presentation.detail
 
 import androidx.annotation.StringRes
 
-data class DetailChildViewEntity(
+data class DetailChildVE(
     val id: Int,
     val imageUrl: String
 )
 
-data class DetailParentViewEntity(
+data class DetailParentVE(
     @StringRes
     val categoryStringResId: Int,
-    val detailChildList: List<DetailChildViewEntity> = listOf()
+    val detailChildList: List<DetailChildVE> = listOf()
 )

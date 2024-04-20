@@ -3,8 +3,8 @@ package com.rjornelas.marvelapp.framework.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.rjornelas.core.data.DbConstants
-import com.rjornelas.core.domain.model.Character
+import com.rjornelas.core.domain.data.DbConstants
+import com.rjornelas.core.domain.domain.model.Character
 
 @Entity(tableName = DbConstants.FAVORITES_TABLE_NAME)
 data class FavoriteEntity(

@@ -1,7 +1,7 @@
 package com.rjornelas.marvelapp.framework.di
 
-import com.rjornelas.core.usecase.base.AppCoroutinesDispatchers
-import com.rjornelas.core.usecase.base.CoroutinesDispatchers
+import com.rjornelas.core.domain.usecase.base.AppCoroutinesDispatchers
+import com.rjornelas.core.domain.usecase.base.CoroutinesDispatchers
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

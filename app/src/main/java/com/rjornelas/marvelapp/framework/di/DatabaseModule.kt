@@ -2,7 +2,7 @@ package com.rjornelas.marvelapp.framework.di
 
 import android.content.Context
 import androidx.room.Room
-import com.rjornelas.core.data.DbConstants
+import com.rjornelas.core.domain.data.DbConstants
 import com.rjornelas.marvelapp.framework.db.AppDatabase
 import dagger.Module
 import dagger.Provides
@@ -25,4 +25,7 @@ object DatabaseModule {
 
     @Provides
     fun provideFavoriteDao(appDatabase: AppDatabase) = appDatabase.favoriteDao()
+
+    @Provides
+    fun provideCharacterDao(appDatabase: AppDatabase) = appDatabase.characterDao()
 }

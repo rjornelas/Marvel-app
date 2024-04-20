@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.switchMap
-import com.rjornelas.core.usecase.GetCharacterCategoriesUseCase
+import com.rjornelas.core.domain.usecase.GetCharacterCategoriesUseCase
 import com.rjornelas.marvelapp.R
 import com.rjornelas.marvelapp.presentation.extensions.watchStatus
 import kotlin.coroutines.CoroutineContext
@@ -26,15 +26,15 @@ class UiActionStateLiveData(
                             emit(UiState.Loading)
                         },
                         success = { data ->
-                            val detailParentList = mutableListOf<DetailParentViewEntity>()
+                            val detailParentList = mutableListOf<DetailParentVE>()
 
                             val comics = data.first
                             if (comics.isNotEmpty()) {
                                 comics.map {
-                                    DetailChildViewEntity(it.id, it.imageUrl)
+                                    DetailChildVE(it.id, it.imageUrl)
                                 }.also {
                                     detailParentList.add(
-                                        DetailParentViewEntity(R.string.details_comics_category, it)
+                                        DetailParentVE(R.string.details_comics_category, it)
                                     )
                                 }
                             }
@@ -42,10 +42,10 @@ class UiActionStateLiveData(
                             val events = data.second
                             if (events.isNotEmpty()) {
                                 events.map {
-                                    DetailChildViewEntity(it.id, it.imageUrl)
+                                    DetailChildVE(it.id, it.imageUrl)
                                 }.also {
                                     detailParentList.add(
-                                        DetailParentViewEntity(R.string.details_events_category, it)
+                                        DetailParentVE(R.string.details_events_category, it)
                                     )
                                 }
                             }
@@ -69,7 +69,7 @@ class UiActionStateLiveData(
 
     sealed class UiState {
         object Loading : UiState()
-        data class Success(val detailParentList: List<DetailParentViewEntity>) : UiState()
+        data class Success(val detailParentList: List<DetailParentVE>) : UiState()
         object Error : UiState()
         object Empty : UiState()
     }

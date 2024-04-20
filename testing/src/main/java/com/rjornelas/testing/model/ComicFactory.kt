@@ -1,6 +1,6 @@
 package com.rjornelas.testing.model
 
-import com.rjornelas.core.domain.model.Comic
+import com.rjornelas.core.domain.domain.model.Comic
 
 class ComicFactory {
 
@@ -12,6 +12,6 @@ class ComicFactory {
     }
 
     sealed class FakeComic {
-        data object FakeComic1 : FakeComic()
+        object FakeComic1 : FakeComic()
     }
 }

@@ -8,7 +8,7 @@ import com.rjornelas.marvelapp.databinding.ItemParentDetailBinding
 import com.rjornelas.marvelapp.framework.imageloader.ImageLoader
 
 class DetailParentAdapter(
-    private val detailParentList: List<DetailParentViewEntity>,
+    private val detailParentList: List<DetailParentVE>,
     private val imageLoader: ImageLoader
 ) : RecyclerView.Adapter<DetailParentAdapter.DetailParentViewHolder>() {
 
@@ -30,7 +30,7 @@ class DetailParentAdapter(
         private val textItemCategory: TextView = itemBinding.textItemCategory
         private val recyclerChildDetail: RecyclerView = itemBinding.recyclerChildDetail
 
-        fun bind(detailParentVE: DetailParentViewEntity) {
+        fun bind(detailParentVE: DetailParentVE) {
             textItemCategory.text = itemView.context.getString(detailParentVE.categoryStringResId)
             recyclerChildDetail.run {
                 setHasFixedSize(true)

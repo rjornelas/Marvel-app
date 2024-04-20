@@ -1,8 +1,10 @@
 package com.rjornelas.core.usecase
 
 import com.nhaarman.mockitokotlin2.whenever
-import com.rjornelas.core.data.repository.CharactersRepository
-import com.rjornelas.core.usecase.base.ResultStatus
+import com.rjornelas.core.domain.data.repository.CharactersRepository
+import com.rjornelas.core.domain.usecase.GetCharacterCategoriesUseCase
+import com.rjornelas.core.domain.usecase.GetCharacterCategoriesUseCaseImpl
+import com.rjornelas.core.domain.usecase.base.ResultStatus
 import com.rjornelas.testing.MainCoroutineRule
 import com.rjornelas.testing.model.CharacterFactory
 import com.rjornelas.testing.model.ComicFactory
@@ -10,7 +12,8 @@ import com.rjornelas.testing.model.EventFactory
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

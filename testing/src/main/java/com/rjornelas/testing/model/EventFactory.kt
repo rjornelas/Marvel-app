@@ -1,6 +1,6 @@
 package com.rjornelas.testing.model
 
-import com.rjornelas.core.domain.model.Event
+import com.rjornelas.core.domain.domain.model.Event
 
 class EventFactory {
 
@@ -14,5 +14,4 @@ class EventFactory {
     sealed class FakeEvent {
         object FakeEvent1 : FakeEvent()
     }
-
 }

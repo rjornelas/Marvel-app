@@ -1,9 +1,9 @@
 package com.rjornelas.marvelapp.framework.remote
 
-import com.rjornelas.core.data.repository.CharactersRemoteDataSource
-import com.rjornelas.core.domain.model.CharacterPaging
-import com.rjornelas.core.domain.model.Comic
-import com.rjornelas.core.domain.model.Event
+import com.rjornelas.core.domain.data.repository.CharactersRemoteDataSource
+import com.rjornelas.core.domain.domain.model.CharacterPaging
+import com.rjornelas.core.domain.domain.model.Comic
+import com.rjornelas.core.domain.domain.model.Event
 import com.rjornelas.marvelapp.framework.network.MarvelApi
 import com.rjornelas.marvelapp.framework.network.response.toCharacterModel
 import com.rjornelas.marvelapp.framework.network.response.toComicModel

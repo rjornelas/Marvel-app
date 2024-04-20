@@ -38,12 +38,12 @@ object NetworkModule {
         return AuthorizationInterceptor(
             publicKey = BuildConfig.PUBLIC_KEY,
             privateKey = BuildConfig.PRIVATE_KEY,
-            calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC")),
-            )
+            calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+        )
     }
 
     @Provides
-    fun provideOkhttpClient(
+    fun provideOkHttpClient(
         loggingInterceptor: HttpLoggingInterceptor,
         authorizationInterceptor: AuthorizationInterceptor
     ): OkHttpClient {
@@ -59,7 +59,6 @@ object NetworkModule {
     fun provideGsonConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
     }
-
 
     @Provides
     fun provideRetrofit(

@@ -65,12 +65,14 @@ class DetailFragment : Fragment() {
 
                     FLIPPER_CHILD_POSITION_DETAIL
                 }
+
                 UiActionStateLiveData.UiState.Error -> {
                     binding.includeErrorView.buttonRetry.setOnClickListener {
                         viewModel.categories.load(detailViewArg.characterId)
                     }
                     FLIPPER_CHILD_POSITION_ERROR
                 }
+
                 UiActionStateLiveData.UiState.Empty -> FLIPPER_CHILD_POSITION_EMPTY
             }
         }
@@ -91,6 +93,7 @@ class DetailFragment : Fragment() {
                         binding.imageFavoriteIcon.setImageResource(uiState.icon)
                         FLIPPER_FAVORITE_CHILD_POSITION_IMAGE
                     }
+
                     is FavoriteUiActionStateLiveData.UiState.Error -> {
                         showShortToast(uiState.messageResId)
                         FLIPPER_FAVORITE_CHILD_POSITION_IMAGE

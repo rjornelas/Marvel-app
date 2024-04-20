@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.rjornelas.core.data.DbConstants
+import com.rjornelas.core.domain.data.DbConstants
 import com.rjornelas.marvelapp.framework.db.entity.FavoriteEntity
 import kotlinx.coroutines.flow.Flow
 

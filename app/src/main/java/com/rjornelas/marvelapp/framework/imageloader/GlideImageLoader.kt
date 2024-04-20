@@ -1,7 +1,6 @@
 package com.rjornelas.marvelapp.framework.imageloader
 
 import android.widget.ImageView
-import androidx.annotation.DrawableRes
 import com.bumptech.glide.Glide
 import javax.inject.Inject
 
